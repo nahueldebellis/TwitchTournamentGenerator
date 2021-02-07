@@ -6,7 +6,7 @@ a bot to create a tournament from twitch
 python ~3.8
   
 ## Instalation
-pipenv run pip install
+pipenv install
   
 ## Configuration
 create participantes.txt file to save the names of participants
