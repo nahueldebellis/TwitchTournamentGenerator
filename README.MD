@@ -14,9 +14,9 @@ you need to create the app to use the account as bot:
   
 ## Usage
 with the script running: pipenv run python run.py  
-use in the chat of the channel !start to start the tournament,  
-then the users can join to them using !join < name >  
-when decide to finish the inscriptions use !stop  
+use in the chat of the channel `!start` to start the tournament,  
+then the users can join to them using `!join <name>`  
+when decide to finish the inscriptions use `!stop`  
 to start and stop a tournament you need mode permission  
   
 ## Dependencies
