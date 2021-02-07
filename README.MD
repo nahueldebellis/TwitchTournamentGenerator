@@ -1,6 +1,6 @@
 # TwitchTournamentGenerator
-
-a bot to create a tournament from twitch and get the bracket in the website: https://scorecounter.com/tournament/
+:purple_heart:
+A bot to create a tournament from twitch and get the bracket in the website: https://scorecounter.com/tournament/
   
 ## Instalation
 pipenv install
@@ -13,7 +13,7 @@ you need to create the app to use the account as bot:
 [app](https://dev.twitch.tv/console/apps/create)
   
 ## Usage
-with the script running: pipenv run python run.py  
+with the script running: `pipenv run python run.py`  
 use in the chat of the channel `!start` to start the tournament,  
 then the users can join to them using `!join <name>`  
 when decide to finish the inscriptions use `!stop`  
