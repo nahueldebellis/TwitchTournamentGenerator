@@ -21,21 +21,19 @@ class Bot(commands.Bot):
     async def clear(self, context):
         self.annotate.clear_file()
 
-    @commands.command(name='start')
-    async def clear(self, context):
-        pass
-    
     @commands.command(name='stop')
-    async def clear(self, context):
+    async def show(self, context):
+        bracket_url = self.annotate.create_bracket()
+        await context.send(bracket_url)
+    
+    @commands.command(name='start')
+    async def start(self, context):
         pass
     
     @commands.command(name='info')
     async def info(self, context):
-        await context.send('creador: debellisnahuel@gmail.com')
+        await context.send('AL QUE PONE UN CARACTER RARO LO FUNAMOS \n creador: debellisnahuel@gmail.com')
         
 if __name__ ==  "__main__":
     bot = Bot()
     bot.run()
-        
-        
-    

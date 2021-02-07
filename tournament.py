@@ -1,4 +1,5 @@
-
+from url import Url
+from random import shuffle
 
 class Tournament():
     def __init__(self):
@@ -11,13 +12,12 @@ class Tournament():
     def clear_file(self):
         open(self.filename, 'w').close()
 
-    def create_bracket():
+    def create_bracket(self):
         url = Url()
-        home, visitor = 
         with open(self.filename, 'r') as f:
-            participant = f.read()
-            url.add(participant)
-        return ''
-
-
-home1-1=nhdb&visitor1-1=adsf&home1-2=juanito&visitor1-2=emi&home1-3=garza&visitor1-3=sarasa&home1-4=%5Batata&visitor1-4=saba
+            persons = []
+            for participant in f.readlines():
+                persons.append(participant)
+            shuffle(persons)
+            [url.add(person) for person in persons]
+        return url.show()
