@@ -33,3 +33,7 @@ class Tournament():
                     url.add(person)
             return url.show()
         raise Exception('no init the tournament')
+
+    def remove(self):
+        """remove one name in the list"""
+        pass

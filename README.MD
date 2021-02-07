@@ -3,17 +3,17 @@
 A bot to create a tournament from twitch and get the bracket in the website: https://scorecounter.com/tournament/
   
 ## Instalation
-pipenv install
-  
+`pipenv install`  
+    
 ## Configuration
-create participantes.txt file to save the names of participants
+Create participantes.txt file to save the names of participants
 you need to create .env file with two secret keys from twitch:
 [token](https://twitchapps.com/tmi/)  
 you need to create the app to use the account as bot:
 [app](https://dev.twitch.tv/console/apps/create)
   
 ## Usage
-with the script running: `pipenv run python run.py`  
+With the script running: `pipenv run python run.py`  
 use in the chat of the channel `!start` to start the tournament,  
 then the users can join to them using `!join <name>`  
 when decide to finish the inscriptions use `!stop`  
