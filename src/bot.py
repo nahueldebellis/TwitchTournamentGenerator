@@ -31,6 +31,7 @@ class Bot(commands.Bot):
         try:
             name_participant = self.get_params_as_text(context)
             self.tournament.register_participant(name_participant)
+            await context.send(f'{name_participant} se anoto en el torneo')
         except Exception as error:
             print(error)
 
