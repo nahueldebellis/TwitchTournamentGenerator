@@ -23,12 +23,14 @@ class Bot(commands.Bot):
 
     @commands.command(name='stop')
     async def show(self, context):
+        self.annotate.start = False
         bracket_url = self.annotate.create_bracket()
         await context.send(bracket_url)
     
     @commands.command(name='start')
     async def start(self, context):
-        pass
+        self.annotate.start = True
+        await context.send(f'Arrancando el torneo manda !join y tu nombre')
     
     @commands.command(name='info')
     async def info(self, context):
