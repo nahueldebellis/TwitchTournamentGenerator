@@ -1,5 +1,5 @@
 # TwitchTournamentGenerator
-:purple_heart:
+:purple_heart:  
 A bot to create a tournament from twitch and get the bracket in the website: https://scorecounter.com/tournament/
   
 ## Instalation
