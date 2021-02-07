@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\debel\\.virtualenvs\\twitchBot-uAuz3WVR\\Scripts\\python.exe"
+    "python.pythonPath": "C:\\Users\\debel\\.virtualenvs\\twitchBot-uAuz3WVR\\Scripts\\python.exe",
+    "python.linting.enabled": true
 }
