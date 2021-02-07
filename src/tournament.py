@@ -6,7 +6,7 @@ from url import Url
 class Tournament():
     """this class randomize the participats, and add participants to a file"""
     def __init__(self):
-        self.filename = '../participantes.txt'
+        self.filename = 'participantes.txt'
         self.start = False
 
     def register_participant(self, participant):
