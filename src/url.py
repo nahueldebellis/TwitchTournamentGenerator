@@ -17,9 +17,9 @@ class Url():
         self.url_final.append(f'{self.concat}{position}1-{Url.bracket}={participant}')
     def show(self):
         """concat the url and return the string"""
-        if Url.cant_participants < 32:
+        if Url.cant_participants <= 32:
             self.url_final[1] = self.treintaydos+self.url_final[1][1:]
-        if Url.cant_participants < 16:
+        if Url.cant_participants <= 16:
             self.url_final[1] = self.dieciseis+self.url_final[1][1:]
         Url.cant_participants = 0
         Url.bracket = 0
