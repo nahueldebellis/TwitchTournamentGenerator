@@ -63,6 +63,7 @@ class Bot(commands.Bot):
         try:    
             if context.author.is_mod:
                 self.tournament.start = True
+                self.tournament.clear_file()
                 await context.send('Arrancando el torneo manda !join y tu nombre')
         except Exception as error:
             print(error)
