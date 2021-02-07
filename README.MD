@@ -13,7 +13,11 @@ you need to create the app to use the account as bot:
 [app](https://dev.twitch.tv/console/apps/create)
   
 ## Usage
-pipenv run python run.py  
+with the script running: pipenv run python run.py  
+use in the chat of the channel !start to start the tournament,  
+then the users can join to them using !join < name >  
+when decide to finish the inscriptions use !stop  
+to start and stop a tournament you need mode permission  
   
 ## Dependencies
 * python 3.8

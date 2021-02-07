@@ -8,7 +8,7 @@ class Url():
     bracket = 0
     def __init__(self):
         self.short_url = Shortener()
-        self.url_final = ['https://scorecounter.com/tournament/?set=', ' 1001111000000']
+        self.url_final = ['https://scorecounter.com/tournament/?set=', '51001111000000']
         self.concat = '&'
         self.treintaydos = '5'
         self.dieciseis = '4'
