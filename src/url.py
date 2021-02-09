@@ -29,4 +29,8 @@ class Url():
             self.url_final[1] = self.ocho+self.url_final[1][1:]
         Url.cant_participants = 0
         Url.bracket = 0
-        return self.short_url.isgd.short(''.join(self.url_final))
+        self.format_url_spaces()
+        return self.short_url.isgd.short(self.url_final)
+    def format_url_spaces(self):
+        """replace space with %20 in the url"""
+        self.url_final = ''.join(self.url_final).replace(' ', '%20')

@@ -5,6 +5,8 @@ from url import Url
 
 class Tournament():
     """this class randomize the participats, and add participants to a file"""
+    persons = 1
+    last_url_tournament = "No se genero aun el torneo"
     def __init__(self):
         self.filename = 'participantes.txt'
         self.start = False
@@ -13,6 +15,7 @@ class Tournament():
         """insert in file a new participant"""
         if self.start:
             with open(self.filename, "a") as file_participants:
+                Tournament.persons = Tournament.persons+1
                 file_participants.write(f'{participant}\n')
         else:
             raise Exception('no init the tournament')
@@ -31,7 +34,8 @@ class Tournament():
                 shuffle(persons)
                 for person in persons:
                     url.add(person)
-            return url.show()
+            Tournament.last_url_tournament = url.show()
+            return Tournament.last_url_tournament
         raise Exception('no init the tournament')
 
     def remove(self):

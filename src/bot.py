@@ -17,7 +17,7 @@ class Bot(commands.Bot):
         print(f'Ready | {self.nick}')
 
     def get_params_as_text(self, context):
-        """get a string with all the text aafter the command"""
+        """get a string with all the text after the command"""
         try:
             command, *params = context.message.content.split(' ')
             params = ' '.join(params)
@@ -25,13 +25,13 @@ class Bot(commands.Bot):
         except Exception as error:
             print(error)
 
-    @commands.command(name='join')
+    @commands.command(name='yo')
     async def join(self, context):
         """this method add a nex participant"""
         try:
             name_participant = self.get_params_as_text(context)
-            self.tournament.register_participant(name_participant)
-            await context.send(f'{name_participant} se anoto en el torneo')
+            self.tournament.register_participant(name_participant[:20])
+            await context.send(f'{name_participant} se anoto en el torneo. Participante N°{Tournament.persons}')
         except Exception as error:
             print(error)
 
@@ -64,7 +64,7 @@ class Bot(commands.Bot):
             if context.author.is_mod:
                 self.tournament.start = True
                 self.tournament.clear_file()
-                await context.send('Arrancando el torneo manda !join y tu nombre')
+                await context.send('Arrancando el torneo manda !yo y tu nombre')
         except Exception as error:
             print(error)
 
@@ -78,8 +78,21 @@ class Bot(commands.Bot):
         except Exception as error:
             print(error)
 
+    @commands.command(name='tabla')
+    async def remove(self, context):
+        """remove one person to tournament"""
+        try:    
+            url_tournament = Tournament.last_url_tournament
+            await context.send(url_tournament)
+        except Exception as error:
+            print(error)
+
 
     @commands.command(name='info')
     async def info(self, context):
         """this method show info of the bot"""
         await context.send('creador: debellisnahuel@gmail.com')
+
+# TODO reporte de wins
+# TODO mostrar tabla actualizada y que no la genere de nuevo
+# TODO ver que poronga pasaba con el link en otros browsers
