@@ -9,31 +9,31 @@ class Tournament():
     last_url_tournament = "No se genero aun el torneo"
     def __init__(self):
         self.filename = 'participantes.txt'
+        self.participants = []
         self.start = False
 
     def register_participant(self, participant):
         """insert in file a new participant"""
         if self.start:
-            with open(self.filename, "a") as file_participants:
-                Tournament.persons = Tournament.persons+1
-                file_participants.write(f'{participant}\n')
+            Tournament.persons = Tournament.persons + 1
+            self.participants.append(participant)
         else:
             raise Exception('no init the tournament')
 
     def clear_file(self):
         """clear file of participants"""
         if self.start:
-            open(self.filename, 'w').close()
+            self.participants = []
 
     def create_bracket(self):
         """create brackets and return the url string"""
         if not self.start:
             url = Url()
-            with open(self.filename, 'r') as file_participants:
-                persons = file_participants.readlines()
-                shuffle(persons)
-                for person in persons:
-                    url.add(person)
+            shuffle(self.participants)
+            if len(self.participants) > 32:
+                self.participants = self.participants[:32]
+            for participant in self.participants:
+                url.add(participant)
             Tournament.last_url_tournament = url.show()
             return Tournament.last_url_tournament
         raise Exception('no init the tournament')
