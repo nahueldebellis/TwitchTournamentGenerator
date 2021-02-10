@@ -5,7 +5,7 @@ from url import Url
 
 class Tournament():
     """this class randomize the participats, and add participants to a file"""
-    persons = 1
+    persons = 0
     last_url_tournament = "No se genero aun el torneo"
     def __init__(self):
         self.filename = 'participantes.txt'
@@ -30,7 +30,7 @@ class Tournament():
         if not self.start:
             url = Url()
             with open(self.filename, 'r') as file_participants:
-                persons = file_participants.readlines()
+                persons = file_participants.readlines()[:32]
                 shuffle(persons)
                 for person in persons:
                     url.add(person)

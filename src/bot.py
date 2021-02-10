@@ -29,9 +29,12 @@ class Bot(commands.Bot):
     async def join(self, context):
         """this method add a nex participant"""
         try:
-            name_participant = self.get_params_as_text(context)
-            self.tournament.register_participant(name_participant[:20])
-            await context.send(f'{name_participant} se anoto en el torneo. Participante N°{Tournament.persons}')
+            if Tournament.persons < 32:
+                name_participant = self.get_params_as_text(context)
+                self.tournament.register_participant(name_participant[:20])
+                await context.send(f'{name_participant} se anoto en el torneo. Participante N°{Tournament.persons}')
+            else:
+                await context.send('No hay mas lugar. El que se fue a la villa perdio su silla. 32/32')
         except Exception as error:
             print(error)
 
@@ -51,6 +54,7 @@ class Bot(commands.Bot):
         try:
             if context.author.is_mod:
                 self.tournament.start = False
+                Tournament.persons = 0
                 bracket_url = self.tournament.create_bracket()
                 print(bracket_url)
                 await context.send(bracket_url)
@@ -78,7 +82,7 @@ class Bot(commands.Bot):
         except Exception as error:
             print(error)
 
-    @commands.command(name='tabla')
+    @commands.command(name='bracket')
     async def remove(self, context):
         """remove one person to tournament"""
         try:    
@@ -91,7 +95,7 @@ class Bot(commands.Bot):
     @commands.command(name='info')
     async def info(self, context):
         """this method show info of the bot"""
-        await context.send('creador: debellisnahuel@gmail.com')
+        await context.send('creador: debellisnahuel@gmail.com\ncolabs:\n emi: https://twitter.com/emilianosce/ o https://www.instagram.com/emilianosce/ \n garza: https://twitter.com/Matias_Garcia00 o https://www.twitch.tv/garzangb')
 
 # TODO reporte de wins
 # TODO mostrar tabla actualizada y que no la genere de nuevo
