@@ -1,2 +1,2 @@
-pipenv lock
+web: pipenv lock
 web: pipenv run python run.py
