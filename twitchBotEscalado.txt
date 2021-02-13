@@ -1,0 +1,9 @@
+* Armar un redis para almacenar los participantes del torneo (tiene que ser una bd no relacional por que los datos son muy simples como para tener un a db relacional con tablas y demas)
+	` En este redis almacenar los usuarios con sus cuentas de twitch en los cuales el bot va a chequear los comandos. 		Aca tenemos el "sesionado" solo lo usaran los registrados en la app los cuales pueden ser varios
+
+* Agregar al bot la capacidad de que cuando cambien los usuarios de twitch (se agregue uno o se modifique el nombre de un canal o se de de baja un user), se actualize el boy
+	` se podria hacer que cuando se notifique el cambio de user se instancie de vuelta la clase del bot con la variable 	de entorno de los canales guardada bien
+* Modificar en el bot para que guarde a los participantes del torneo en la db de redis mediante la API o directamente en la db, asginado una clave que corresponda al user registrado
+
+* Armar una API para registrar usuarios y leer lo almacenado en redis de los participantes
+* Armar view en react para gestionar el torneo o mostrar el fixture

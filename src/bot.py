@@ -82,7 +82,7 @@ class Bot(commands.Bot):
         except Exception as error:
             print(error)
 
-    @commands.command(name='bracket')
+    @commands.command(name='tabla')
     async def remove(self, context):
         """remove one person to tournament"""
         try:    
