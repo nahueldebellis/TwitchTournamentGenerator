@@ -30,6 +30,7 @@ class Url():
         Url.cant_participants = 0
         Url.bracket = 0
         self.format_url_spaces()
+        print(self.url_final)
         return self.short_url.isgd.short(self.url_final)
     def format_url_spaces(self):
         """replace space with %20 in the url"""

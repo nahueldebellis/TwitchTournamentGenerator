@@ -1,2 +1,6 @@
 .env
+__pycache__/
 participantes.txt
+src/installer.py
+dist/
+build/
