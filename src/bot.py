@@ -60,6 +60,35 @@ class Bot(commands.Bot):
                 await context.send(bracket_url)
         except Exception as error:
             print(error)
+    
+    @commands.command(name='tres')
+    async def stop(self, context):
+        """this method show the finally url of the tournament"""
+        try:
+            if context.author.is_mod:
+                name_participant = self.get_params_as_text(context)
+                with open('ranking', 'a') as f:
+                    position = exist(f, participante)
+                    if position:
+                        update(position, 3)
+                    else:
+                        add(participante, 3)
+
+        except Exception as error:
+            print(error)
+    
+    @commands.command(name='uno')
+    async def stop(self, context):
+        """this method show the finally url of the tournament"""
+        try:
+            if context.author.is_mod:
+                self.tournament.start = False
+                Tournament.persons = 0
+                bracket_url = self.tournament.create_bracket()
+                print(bracket_url)
+                await context.send(bracket_url)
+        except Exception as error:
+            print(error)
 
     @commands.command(name='start')
     async def start(self, context):
